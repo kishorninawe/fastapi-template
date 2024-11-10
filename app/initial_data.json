@@ -1,0 +1,16 @@
+[
+  {
+    "model": "User",
+    "pk": "dd370c1f-3e09-4bb3-b569-d7ea9cb69a35",
+    "fields": {
+      "email": "johndoe@gmail.com",
+      "password": "$2b$12$wB/PVbAqldWxiN8SrZVF9OXxwgKIj8pZECWxdRpFHaQqqsnQbITWG",
+      "gender": "MALE",
+      "is_active": true,
+      "date_joined": "2024-01-01 00:00:00.00000+00:00",
+      "last_login": "2024-01-01 00:00:00.00000+00:00",
+      "last_active": "2024-01-01 00:00:00.00000+00:00",
+      "key_version": 1
+    }
+  }
+]

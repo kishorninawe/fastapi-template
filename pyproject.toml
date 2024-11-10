@@ -1,0 +1,64 @@
+[project]
+name = "app"
+version = "0.0.1"
+description = ""
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "alembic==1.14.0",
+    "bcrypt==4.2.0",
+    "cython==3.0.11",
+    "fastapi[standard]==0.115.4",
+    "gunicorn==23.0.0",
+    "psycopg[binary]==3.2.3",
+    "pydantic==2.9.2",
+    "pydantic-core==2.23.4",
+    "pydantic-settings==2.6.0",
+    "pyjwt==2.9.0",
+    "requests==2.32.3",
+    "setuptools==75.3.0",
+    "sqlalchemy==2.0.36",
+    "starlette==0.41.2",
+    "tenacity==9.0.0",
+    "uvicorn[standard]==0.32.0",
+]
+
+[dependency-groups]
+dev = [
+    "mypy==1.13.0",
+    "pytest==8.3.3",
+    "ruff==0.7.1",
+]
+
+[tool.mypy]
+strict = true
+exclude = ["venv", ".venv", "alembic"]
+
+[tool.ruff]
+target-version = "py312"
+exclude = ["venv", ".venv", "alembic"]
+
+[tool.ruff.lint]
+select = [
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "I", # isort
+    "B", # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+    "ARG001", # unused arguments in functions
+]
+ignore = [
+    "E501", # line too long, handled by black
+    "B008", # do not perform function calls in argument defaults
+    "W191", # indentation contains tabs
+    "B904", # Allow raising exceptions without from e, for HTTPException
+]
+
+[tool.ruff.lint.pyupgrade]
+# Preserve types, even if a file imports `from __future__ import annotations`.
+keep-runtime-typing = true
+
+[tool.pytest.ini_options]
+addopts = "-v"
+testpaths = ["./app/tests"]
